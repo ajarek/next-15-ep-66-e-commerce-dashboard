@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Navbar = async () => {
   return (
-    <div className=' flex flex-col justify-start items-center   px-16 max-sm:px-2 border-b-2 '>
+    <div className=' flex flex-col justify-start items-center   px-16 max-sm:px-2  '>
       <div className='h-12  w-full flex  justify-between items-center '>
         <div className='h-12 w-full flex justify-start items-center gap-2'>
           <div className='w-8 h-8 bg-slate-300 flex justify-center items-center rounded-full shadow-slate-400 shadow-md '>
