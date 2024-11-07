@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "name": "Garnitur wizytowy",
+    "image": "/images/suit-1.jpg",
+    "description": "Najbardziej formalny rodzaj garnituru, przeznaczony na wyjątkowe okazje, takie jak śluby czy gale. Charakteryzuje się wysoką jakością tkaniny, często jednorzędową marynarką z jednym lub dwoma guzikami oraz wąskimi klapami.",
+    "price": 500,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 2,
+    "name": "Garnitur biznesowy",
+    "image": "/images/suit-2.jpg",
+    "description": "Klasyczny garnitur, idealny do pracy w biurze lub na ważne spotkania. Wykonany jest zazwyczaj z wysokiej jakości wełny, ma prosty krój i stonowane kolory.",
+    "price": 540,
+    "category": "formalny",
+    "color": "brązowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 3,
+    "name": "Garnitur casualowy",
+    "image": "/images/suit-3.jpg",
+    "description": "Mniej formalny garnitur, który można nosić na co dzień. Wyróżnia się bardziej luźnym krojem, ciekawszymi wzorami i kolorami. Często wykonany jest z lnu lub bawełny.",
+    "price": 600,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 4,
+    "name": "Garnitur dwuczęściowy",
+    "image": "/images/suit-4.jpg",
+    "description": "Składa się z marynarki i spodni. Jest to najpopularniejszy rodzaj garnituru.",
+    "price": 360,
+    "category": "elementy",
+    "color": "czarny",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 5,
+    "name": "Garnitur trzyczęściowy",
+    "image": "/images/suit-5.jpg",
+    "description": "Oprócz marynarki i spodni zawiera również kamizelkę. Nadaje stylizacji bardziej formalny charakter.",
+    "price":490,
+    "category": "elementy",
+    "color": "czarny",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 6,
+    "name": "Garnitur jednorzędowy",
+    "image": "/images/suit-6.jpg",
+    "description": "Marynarka zapinana jest na jeden rząd guzików. Jest to najbardziej uniwersalny rodzaj garnituru.",
+    "price": 500,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 7,
+    "name": "Garnitur dwurzędowy",
+    "image": "/images/suit-7.jpg",
+    "description": "Marynarka zapinana jest na dwa rzędy guzików. Nadaje stylizacji bardziej elegancki i tradycyjny wygląd.",
+    "price": 500,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 8,
+    "name": "Garnitur wełniany",
+    "image": "/images/suit-8.jpg",
+    "description": "Najpopularniejszy wybór na chłodniejsze pory roku. Wełna zapewnia doskonałą izolację termiczną i jest bardzo wytrzymała..",
+    "price": 480,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 9,
+    "name": "Garnitur lniany",
+    "image": "/images/suit-9.jpg",
+    "description": "Idealny na lato. Len jest przewiewny i naturalny, zapewniając komfort noszenia nawet w gorące dni.",
+    "price": 490,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 10,
+    "name": "Garnitur bawełniany",
+    "image": "/images/suit-1.jpg",
+    "description": "Lekki i wygodny garnitur, który można nosić zarówno na co dzień, jak i na bardziej formalne okazje.",
+    "price": 520,
+    "category": "formalny",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 11,
+    "name": "Garnitur w kratę",
+    "image": "/images/suit-11.jpg",
+    "description": "Klasyczny wzór, zawsze modny. Może być zarówno dyskretny, jak i bardziej wyrazisty.",
+    "price": 480,
+    "category": "wzor",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  },
+  {
+    "id": 12,
+    "name": "Garnitur gładki",
+    "image": "/images/suit-12.jpg",
+    "description": "Najbardziej uniwersalny wybór. Pasuje do każdej okazji i łatwo go zestawiać z innymi elementami garderoby.",
+    "price": 390,
+    "category": "wzór",
+    "color": "granatowy",
+    "size": "L, XL, XXL"
+  }
+  
+]
