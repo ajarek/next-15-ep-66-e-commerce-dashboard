@@ -1,11 +1,15 @@
 'use client'
 import Counter from '@/components/Counter'
+import SelectSize from '@/components/Select'
 import { Button } from '@/components/ui/button'
 import suitsData from '@/data/suits.json'
 import { ShoppingBag } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { use } from "react"
+import type { Item } from '@/store/cartStore'
+import { useCartStore } from '@/store/cartStore'
+
 type Suit =
   | {
       id: number
@@ -20,12 +24,17 @@ type Suit =
   | undefined
   
 const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
+
+  const { addItemToCart, items } = useCartStore()
   const paramsId=use(params)
   const suit = suitsData.find((st) => st.id === Number(paramsId.id)) as Suit
   const [quantityItems, setQuantityItems] = useState(1)
+  const [size, setSize] = useState('X')
+
   if (!suit) {
     return <div>Suit not found</div>
   }
+
   const increment = () => {
     const actualQuantity = Number(quantityItems) + 1
     setQuantityItems(actualQuantity)
@@ -35,6 +44,20 @@ const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
     const actualQuantity = +quantityItems > 1 ? Number(quantityItems) - 1 : 1
     setQuantityItems(actualQuantity)
   }
+
+  const handleSize = (size: string) => {
+    setSize(size)
+  }
+
+  const handleCart = (item: Item) => {
+    if (items.some((i) => i.id === item.id)) return
+    const newItem = { ...item }
+    addItemToCart(newItem)
+    // router.push('/cart')
+    setQuantityItems(1)
+    setSize('X')
+  }
+
   return (
     <div className=' min-h-screen p-8'>
       {suit && (
@@ -51,12 +74,20 @@ const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
           </div>
           <div className='flex flex-col items-start justify-center gap-4 '>
             <h1 className='text-xl'>{suit.name}</h1>
-            <p>Opis: {suit.description}</p>
-            <p>Kolor: {suit.color}</p>
-            <p>Rozmiar: {suit.size}</p>
-            <p>Cena: {suit.price.toFixed(2)} PLN</p>
+            <div>Opis: {suit.description}</div>
+            <div>Kolor: {suit.color}</div>
+            <div className='flex items-center gap-4'>Rozmiar: <SelectSize onValueChange={handleSize} /></div>
+            <div>Cena: {suit.price.toFixed(2)} PLN</div>
             <Counter quantityItems={quantityItems} increment={increment} decrement={decrement} />
-            <Button>
+            <Button onClick={()=>handleCart({
+                    id: Number(suit?.id) || 0,
+                    name: suit?.name || '',
+                    price: suit?.price || 0,
+                    quantity: quantityItems || 1,
+                    image: suit?.image || '',
+                    color: suit?.color || '',
+                    size: size || 'X',
+                  })}>
               Dodaj do Koszyka <ShoppingBag />
             </Button>
           </div>
