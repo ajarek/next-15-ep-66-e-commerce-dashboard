@@ -23,7 +23,7 @@ export default function Home() {
           Prosty a Elegancki Styl...
         </h1>
         <Link
-          href='/suite'
+          href='/suits'
           className={`${buttonVariants({
             variant: 'outline',
           })} absolute  top-2/3 max-sm:top-[75%] translate-y-[-50%] z-30 text-xl`}

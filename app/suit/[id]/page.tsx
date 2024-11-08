@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { use } from "react"
 import type { Item } from '@/store/cartStore'
 import { useCartStore } from '@/store/cartStore'
+import { useRouter } from 'next/navigation'
 
 type Suit =
   | {
@@ -26,11 +27,12 @@ type Suit =
 const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
 
   const { addItemToCart, items } = useCartStore()
+  const router = useRouter()
   const paramsId=use(params)
   const suit = suitsData.find((st) => st.id === Number(paramsId.id)) as Suit
   const [quantityItems, setQuantityItems] = useState(1)
   const [size, setSize] = useState('X')
-
+  
   if (!suit) {
     return <div>Suit not found</div>
   }
@@ -53,7 +55,7 @@ const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
     if (items.some((i) => i.id === item.id)) return
     const newItem = { ...item }
     addItemToCart(newItem)
-    // router.push('/cart')
+    router.push('/suits')
     setQuantityItems(1)
     setSize('X')
   }
