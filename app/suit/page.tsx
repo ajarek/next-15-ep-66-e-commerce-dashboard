@@ -2,40 +2,34 @@
 import Counter from '@/components/Counter'
 import SelectSize from '@/components/Select'
 import { Button } from '@/components/ui/button'
-import suitsData from '@/data/suits.json'
 import { ShoppingBag } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import { use } from "react"
+import { use } from 'react'
 import type { Item } from '@/store/cartStore'
 import { useCartStore } from '@/store/cartStore'
 import { useRouter } from 'next/navigation'
 
-type Suit =
-  | {
-      id: number
-      name: string
-      image: string
-      description: string
-      price: number
-      category: string
-      color: string
-      size: string
-    }
-  | undefined
-  
-const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
-
+const SuitId = ({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    id: string
+    price: number
+    size: string
+    name: string
+    image: string
+    description: string
+    color: string
+  }>
+}) => {
   const { addItemToCart, items } = useCartStore()
   const router = useRouter()
-  const paramsId=use(params)
-  const suit = suitsData.find((st) => st.id === Number(paramsId.id)) as Suit
+
   const [quantityItems, setQuantityItems] = useState(1)
   const [size, setSize] = useState('X')
-  
-  if (!suit) {
-    return <div>Suit not found</div>
-  }
+  const params = use(searchParams)
+  const { id, price, description, name, image, color } = params
 
   const increment = () => {
     const actualQuantity = Number(quantityItems) + 1
@@ -62,12 +56,12 @@ const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
 
   return (
     <div className=' min-h-screen p-8'>
-      {suit && (
+      {true && (
         <div className='grid grid-cols-2 gap-4 '>
           <div className='flex items-center justify-center'>
             <Image
-              src={suit.image}
-              alt={suit.name}
+              src={image}
+              alt={name}
               width={342}
               height={480}
               priority
@@ -75,21 +69,31 @@ const SuitId = ({ params }:{ params: Promise<{ id: string }> }) => {
             />
           </div>
           <div className='flex flex-col items-start justify-center gap-4 '>
-            <h1 className='text-xl'>{suit.name}</h1>
-            <div>Opis: {suit.description}</div>
-            <div>Kolor: {suit.color}</div>
-            <div className='flex items-center gap-4'>Rozmiar: <SelectSize onValueChange={handleSize} /></div>
-            <div>Cena: {suit.price.toFixed(2)} PLN</div>
-            <Counter quantityItems={quantityItems} increment={increment} decrement={decrement} />
-            <Button onClick={()=>handleCart({
-                    id: Number(suit?.id) || 0,
-                    name: suit?.name || '',
-                    price: suit?.price || 0,
-                    quantity: quantityItems || 1,
-                    image: suit?.image || '',
-                    color: suit?.color || '',
-                    size: size || 'X',
-                  })}>
+            <h1 className='text-xl'>{name}</h1>
+            <div>Opis: {description}</div>
+            <div>Kolor: {color}</div>
+            <div className='flex items-center gap-4'>
+              Rozmiar: <SelectSize onValueChange={handleSize} />
+            </div>
+            <div>Cena: {Number(price).toFixed(2)} PLN</div>
+            <Counter
+              quantityItems={quantityItems}
+              increment={increment}
+              decrement={decrement}
+            />
+            <Button
+              onClick={() =>
+                handleCart({
+                  id: Number(id) || 0,
+                  name: name || '',
+                  price: price || 0,
+                  quantity: quantityItems || 1,
+                  image: image || '',
+                  color: color || '',
+                  size: size || 'X',
+                })
+              }
+            >
               Dodaj do Koszyka <ShoppingBag />
             </Button>
           </div>

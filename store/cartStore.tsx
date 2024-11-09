@@ -10,6 +10,18 @@ export type Item = {
   image: string
   color: string
 }
+export type Suit =
+| {
+    id: number
+    name: string
+    image: string
+    description: string
+    price: number
+    category: string
+    color: string
+    size: string
+  }
+| undefined
 
 type ItemState = {
   items: Item[]
