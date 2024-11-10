@@ -57,7 +57,7 @@ const SuitId = ({
   return (
     <div className=' min-h-screen p-8'>
       {true && (
-        <div className='grid grid-cols-2 gap-4 '>
+        <div className='grid grid-cols-2 max-sm:grid-cols-1  gap-4 '>
           <div className='flex items-center justify-center'>
             <Image
               src={image}
