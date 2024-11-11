@@ -12,6 +12,14 @@ const Links = () => {
       <div className='flex items-center gap-8 mr-4 '>
         
 
+        
+        <Link
+          href='/dashboard'
+          className={`  text-xl hover:text-primary focus:text-primary `}
+          aria-label='Shop'
+        >
+          Panel
+        </Link>
         <Link
           href='/about-us'
           className={`  text-xl hover:text-primary focus:text-primary `}
@@ -19,7 +27,6 @@ const Links = () => {
         >
           O nas
         </Link>
-        
         <Link
           href='/suits'
           className={`  text-xl hover:text-primary focus:text-primary `}
