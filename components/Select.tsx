@@ -14,7 +14,7 @@ const SelectSize = ({onValueChange}:{onValueChange:(value:string)=>void}) => {
     <SelectValue placeholder="Size" />
   </SelectTrigger>
   <SelectContent>
-    <SelectItem value="X">X</SelectItem>
+    <SelectItem value="L">L</SelectItem>
     <SelectItem value="XL">XL</SelectItem>
     <SelectItem value="XXL">XXL</SelectItem>
   </SelectContent>

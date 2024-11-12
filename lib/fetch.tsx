@@ -1,3 +1,4 @@
+'use server'
 import fs from 'fs/promises'
 import type { Suit } from '@/store/cartStore'
 

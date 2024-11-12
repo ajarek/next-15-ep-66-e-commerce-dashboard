@@ -10,13 +10,18 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import Link from 'next/link'
+import { Plus } from 'lucide-react'
 
 const Dashboard = async () => {
   const suitsData = await fetchSuits()
   return (
     <div className='flex flex-col items-center px-8'>
+      <div className='flex items-center gap-8'>
       <h1 className='text-xl py-4 '>Lista Towarów</h1>
+       <Link href='/add-suit' className={`${buttonVariants({variant: 'default', size:'icon'})} `}><Plus size={32} /></Link>
+      </div>
       <Table >
         <TableCaption>Koniec listy</TableCaption>
         <TableHeader>
