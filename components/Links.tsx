@@ -13,13 +13,7 @@ const Links = () => {
         
 
         
-        <Link
-          href='/dashboard'
-          className={`  text-xl hover:text-primary focus:text-primary `}
-          aria-label='Shop'
-        >
-          Panel
-        </Link>
+       
         <Link
           href='/about-us'
           className={`  text-xl hover:text-primary focus:text-primary `}

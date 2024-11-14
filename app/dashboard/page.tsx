@@ -14,14 +14,21 @@ import {  buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import { Plus } from 'lucide-react'
 import ButtonDelete from '@/components/ButtonDelete'
-
+import { auth } from '@/app/api/auth/auth'
+import { redirect } from 'next/navigation'
 const Dashboard = async () => {
+  const session = await auth()
   const suitsData = await fetchSuits()
+
+  if(!session){
+    redirect('/')
+  }
+
   return (
     <div className='flex flex-col items-center px-8 max-sm:px-1'>
       <div className='flex items-center gap-8'>
       <h1 className='text-xl py-4 '>Lista Towarów</h1>
-       <Link href='/add-suit' className={`${buttonVariants({variant: 'default', size:'icon'})} `}><Plus size={32} /></Link>
+       <Link href='/dashboard/add-suit' className={`${buttonVariants({variant: 'default', size:'icon'})} `}><Plus size={32} /></Link>
       </div>
       <Table >
         <TableCaption>Koniec listy</TableCaption>

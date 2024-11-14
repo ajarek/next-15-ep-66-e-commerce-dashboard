@@ -3,8 +3,11 @@ import MobileNav from './MobileNav'
 import { ModeToggle } from '@/components/ModeToggle'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Logout from '@/components/Logout'
+import { auth } from '@/app/api/auth/auth'
 const Navbar = async () => {
+  const session = await auth()
+  const { user } = (session as any) || {}
   return (
     <div className=' flex flex-col justify-start items-center   px-16 max-sm:px-2  '>
       <div className='h-12  w-full flex  justify-between items-center '>
@@ -18,7 +21,21 @@ const Navbar = async () => {
         </Link>
         <div className=' w-full flex items-center gap-2 '>
           <Links />
+
+          {user?.admin && (
+          <Link
+            href='/dashboard'
+            className={` text-xl hover:text-primary focus:text-primary `}
+          >
+            Panel
+          </Link>
+        )}
+      </div>
+      <div className=' flex justify-between items-center italic gap-6 '>
+        
+
           <ModeToggle />
+        <Logout session={session} />
         </div>
 
         <div className=' lg:hidden'>
