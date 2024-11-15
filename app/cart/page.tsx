@@ -30,20 +30,35 @@ const Cart = () => {
                   />
                 </div>
                 <div className='w-full text-start'>{item.name}</div>
-                <div className='w-full text-start max-sm:hidden'>{item.size}</div>
+                <div className='w-full text-start max-sm:hidden'>
+                  {item.size}
+                </div>
 
                 <div className=' max-sm:hidden'>${item.price}</div>
 
                 <div className='flex items-center gap-1'>
-                  <button onClick={() => decrement(item.id)} aria-label='decrement'>➖</button>
+                  <button
+                    onClick={() => decrement(item.id)}
+                    aria-label='decrement'
+                  >
+                    ➖
+                  </button>
                   <div className='flex items-center justify-center  w-[30px] h-[30px] rounded-full border-2 border-gray-500'>
                     {item.quantity}
                   </div>
-                  <button onClick={() => increment(item.id) } aria-label='increment'>➕</button>
+                  <button
+                    onClick={() => increment(item.id)}
+                    aria-label='increment'
+                  >
+                    ➕
+                  </button>
                 </div>
                 <div> ${(item.price * item.quantity).toFixed(2)}</div>
                 <div>
-                  <button onClick={() => removeItemFromCart(item.id)} aria-label='remove'>
+                  <button
+                    onClick={() => removeItemFromCart(item.id)}
+                    aria-label='remove'
+                  >
                     ❌
                   </button>
                 </div>
@@ -61,7 +76,10 @@ const Cart = () => {
             >
               Delete All
             </Button>
-            <Button onClick={() => router.push('/payment')} aria-label='go to payment'>
+            <Button
+              onClick={() => router.push('/payment')}
+              aria-label='go to payment'
+            >
               I buy Products
             </Button>
           </div>

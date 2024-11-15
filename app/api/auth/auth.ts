@@ -25,6 +25,7 @@ export const {
         username: { type: 'text', required: true },
         password: { type: 'password', required: true },
       },
+
       async authorize(credentials: any) {
         await connectToDb()
         try {

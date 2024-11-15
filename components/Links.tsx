@@ -4,16 +4,11 @@ import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
 import { useCartStore } from '@/store/cartStore'
 
-
 const Links = () => {
   const { items } = useCartStore()
   return (
-    <div className='max-lg:hidden w-full flex items-center justify-end   '>
-      <div className='flex items-center gap-8 mr-4 '>
-        
-
-        
-       
+    <div className='max-lg:hidden w-full flex items-center justify-end '>
+      <div className=' flex items-center gap-8 mr-4 '>
         <Link
           href='/about-us'
           className={`  text-xl hover:text-primary focus:text-primary `}
@@ -36,7 +31,7 @@ const Links = () => {
         >
           Kontakt
         </Link>
-        
+
         {items.length > 0 && (
           <Link
             href='/cart'
@@ -52,7 +47,6 @@ const Links = () => {
             </div>
           </Link>
         )}
-        
       </div>
     </div>
   )

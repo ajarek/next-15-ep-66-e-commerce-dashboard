@@ -128,5 +128,15 @@
     "category": "wzór",
     "color": "granatowy",
     "size": "XL"
+  },
+  {
+    "id": 14,
+    "name": "Bar Syrena",
+    "image": "https://freepngimg.com/thumb/jeans/156315-ripped-jeans-download-free-image.png",
+    "description": " Service Taxi",
+    "price": 250,
+    "category": "ipads",
+    "color": "red",
+    "size": "XL"
   }
 ]

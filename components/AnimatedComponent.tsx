@@ -11,14 +11,23 @@ export const fadeUpVariant = {
     },
   },
 }
-const FadeUpAnimation = ({ children, classDiv}:{ children: React.ReactNode, classDiv:string }) => {
+const FadeUpAnimation = ({
+  children,
+  classDiv,
+}: {
+  children: React.ReactNode
+  classDiv: string
+}) => {
   return (
-    <motion.div variants={fadeUpVariant} initial="initial" animate="animate" className={classDiv}>
+    <motion.div
+      variants={fadeUpVariant}
+      initial='initial'
+      animate='animate'
+      className={classDiv}
+    >
       {children}
     </motion.div>
   )
 }
 
-
 export default FadeUpAnimation
- 

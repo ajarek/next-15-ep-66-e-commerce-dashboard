@@ -11,17 +11,17 @@ export type Item = {
   color: string
 }
 export type Suit =
-| {
-    id: number
-    name: string
-    image: string
-    description: string
-    price: number
-    category: string
-    color: string
-    size: string
-  }
-| undefined
+  | {
+      id: number
+      name: string
+      image: string
+      description: string
+      price: number
+      category: string
+      color: string
+      size: string
+    }
+  | undefined
 
 type ItemState = {
   items: Item[]
@@ -52,10 +52,7 @@ export const useCartStore = create<ItemState>()(
       removeAllFromCart: () => set({ items: [] }),
 
       total: () =>
-        get().items.reduce(
-          (acc, item) => acc + item.price * item.quantity,
-          0
-        ),
+        get().items.reduce((acc, item) => acc + item.price * item.quantity, 0),
       removeAll: () => set({ items: [] }),
 
       increment: (id: number) =>

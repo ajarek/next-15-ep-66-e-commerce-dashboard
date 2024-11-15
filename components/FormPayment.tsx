@@ -90,7 +90,10 @@ const FormPayment = ({ nameUser }: { nameUser: string }) => {
           </div>
         </form>
       ) : (
-        <Button onClick={() => router.push('/suits')} aria-label='Garnitury'>
+        <Button
+          onClick={() => router.push('/suits')}
+          aria-label='Garnitury'
+        >
           Garnitury
         </Button>
       )}

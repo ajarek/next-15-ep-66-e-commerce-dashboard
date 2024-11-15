@@ -12,7 +12,6 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { fetchSuits } from '@/lib/fetch'
 
-
 const Suits = async () => {
   const suitsData = await fetchSuits()
   return (

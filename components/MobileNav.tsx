@@ -40,7 +40,6 @@ const MobileNav = () => {
               </div>
             </Link>
           )}
-          
 
           <Link
             href='/about-us'
@@ -49,7 +48,7 @@ const MobileNav = () => {
           >
             O nas
           </Link>
-        
+
           <Link
             href='/suits'
             className={`  text-xl hover:text-primary focus:text-primary `}
@@ -65,7 +64,6 @@ const MobileNav = () => {
           >
             Kontakt
           </Link>
-          
         </div>
       </SheetContent>
     </Sheet>

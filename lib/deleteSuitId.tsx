@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation'
 import fs from 'fs/promises'
 
 export const deleteSuitId = async (formData: FormData) => {
-  
   const suits = (await fetchSuits()) as Suit[]
   const id = formData.get('id')
 
